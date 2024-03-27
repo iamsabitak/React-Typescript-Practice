@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+
 interface NameInputProps {
   initialFirstName?: string;
   initialLastName?: string;
 }
+
 const NameInput: React.FC<NameInputProps> = ({
-  initialFirstName = "",
-  initialLastName = "",
+  initialFirstName = '',
+  initialLastName = '',
 }) => {
   const [firstName, setFirstName] = useState<string>(initialFirstName);
   const [lastName, setLastName] = useState<string>(initialLastName);
-  const [error, setError] = useState<string>("");
+  const [error, setError] = useState<string>('');
 
   const handleFirstNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFirstName(e.target.value);
@@ -22,10 +24,10 @@ const NameInput: React.FC<NameInputProps> = ({
   };
 
   const validateInputs = () => {
-    if (firstName.trim() === "" || lastName.trim() === "") {
-      setError("Both first name and last name are required.");
+    if (firstName.trim() === '' || lastName.trim() === '') {
+      setError('Both first name and last name are required.');
     } else {
-      setError("");
+      setError('');
     }
   };
 
@@ -37,7 +39,12 @@ const NameInput: React.FC<NameInputProps> = ({
     <div>
       <div>
         <label htmlFor="firstName">First Name:</label>
-        <input id="firstName" type="text" value={firstName} />
+        <input
+          id="firstName"
+          type="text"
+          value={firstName}
+          onChange={handleFirstNameChange}
+        />
       </div>
       <div>
         <label htmlFor="lastName">Last Name:</label>
@@ -48,10 +55,10 @@ const NameInput: React.FC<NameInputProps> = ({
           onChange={handleLastNameChange}
         />
       </div>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
       {!error && (
         <p>
-          Full Name: <strong>Sabita</strong>
+          Full Name: <strong>{getFullName()}</strong>
         </p>
       )}
     </div>
