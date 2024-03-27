@@ -19,7 +19,20 @@ const Gallery: React.FC = () => {
     setSelectedImageIndex(null);
   };
 
-  return <div>Gallery</div>;
+  return (
+    <div className="gallery">
+      {imageUrls.map((url, index) => (
+        <img key={index} src={url} alt={`Image ${index}`} />
+      ))}
+      <div className="modal">
+        <img
+          src={imageUrls[selectedImageIndex]}
+          alt={`Image ${selectedImageIndex}`}
+        />
+        <button>Close</button>
+      </div>
+    </div>
+  );
 };
 
 export default Gallery;
