@@ -11,6 +11,13 @@ const Gallery: React.FC = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null
   );
+  const handleThumbnailClick = (index: number) => {
+    setSelectedImageIndex(index);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedImageIndex(null);
+  };
 
   return <div>Gallery</div>;
 };
