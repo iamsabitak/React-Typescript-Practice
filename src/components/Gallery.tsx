@@ -24,17 +24,43 @@ const Gallery: React.FC = () => {
   };
 
   return (
-    <div className="gallery">
-      <button onClick={handlePrevImage}>Prev</button>
+    <div className="gallery" style={{ position: "relative" }}>
+      <button
+        onClick={handlePrevImage}
+        style={{
+          position: "absolute",
+          left: "0",
+          top: "50%",
+          transform: "translateY(-50%)",
+          zIndex: 1,
+        }}
+      >
+        Prev
+      </button>
       {imageUrls.map((url, index) => (
         <img
           key={index}
           src={url}
           alt={`Image ${index}`}
-          style={{ display: index === selectedImageIndex ? "block" : "none" }}
+          style={{
+            display: index === selectedImageIndex ? "block" : "none",
+            margin: "0 auto",
+            maxWidth: "100%",
+          }}
         />
       ))}
-      <button onClick={handleNextImage}>Next</button>
+      <button
+        onClick={handleNextImage}
+        style={{
+          position: "absolute",
+          right: "0",
+          top: "50%",
+          transform: "translateY(-50%)",
+          zIndex: 1,
+        }}
+      >
+        Next
+      </button>
     </div>
   );
 };
