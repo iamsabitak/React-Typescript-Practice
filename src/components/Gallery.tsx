@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const imageUrls = [
   "https://img.freepik.com/premium-vector/sunset-with-lots-buildings-along-road_1035899-2289.jpg",
