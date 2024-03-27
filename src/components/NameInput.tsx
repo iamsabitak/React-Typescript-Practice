@@ -11,6 +11,11 @@ const NameInput: React.FC<NameInputProps> = ({
   const [lastName, setLastName] = useState<string>(initialLastName);
   const [error, setError] = useState<string>("");
 
+  const handleFirstNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFirstName(e.target.value);
+    validateInputs();
+  };
+
   const handleLastNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLastName(e.target.value);
     validateInputs();
@@ -22,6 +27,10 @@ const NameInput: React.FC<NameInputProps> = ({
     } else {
       setError("");
     }
+  };
+
+  const getFullName = () => {
+    return `${firstName.trim()} ${lastName.trim()}`;
   };
 
   return (
