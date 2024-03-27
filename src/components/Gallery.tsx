@@ -7,30 +7,34 @@ const imageUrls = [
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9g-cyN70-qR1tGnYFy9AambDYOmu0mActj2nr9FdUmGV2_FykC798gkduK1_UYrTM_RQ&usqp=CAU",
   "https://e1.pxfuel.com/desktop-wallpaper/61/234/desktop-wallpaper-anime-village-posted-by-sarah-tremblay-anime-countryside.jpg",
 ];
+
 const Gallery: React.FC = () => {
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
-    null
-  );
-  const handleThumbnailClick = (index: number) => {
-    setSelectedImageIndex(index);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0);
+
+  const handleNextImage = () => {
+    setSelectedImageIndex((prevIndex) =>
+      prevIndex === imageUrls.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
-  const handleCloseModal = () => {
-    setSelectedImageIndex(null);
+  const handlePrevImage = () => {
+    setSelectedImageIndex((prevIndex) =>
+      prevIndex === 0 ? imageUrls.length - 1 : prevIndex - 1
+    );
   };
 
   return (
     <div className="gallery">
+      <button onClick={handlePrevImage}>Prev</button>
       {imageUrls.map((url, index) => (
-        <img key={index} src={url} alt={`Image ${index}`} />
-      ))}
-      <div className="modal">
         <img
-          src={imageUrls[selectedImageIndex]}
-          alt={`Image ${selectedImageIndex}`}
+          key={index}
+          src={url}
+          alt={`Image ${index}`}
+          style={{ display: index === selectedImageIndex ? "block" : "none" }}
         />
-        <button>Close</button>
-      </div>
+      ))}
+      <button onClick={handleNextImage}>Next</button>
     </div>
   );
 };
