@@ -9,6 +9,21 @@ const NameInput: React.FC<NameInputProps> = ({
   }) => {
     const [firstName, setFirstName] = useState<string>(initialFirstName);
   const [lastName, setLastName] = useState<string>(initialLastName);
+  const [error, setError] = useState<string>('');
+  
+  const handleLastNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setLastName(e.target.value);
+    validateInputs();
+  };
+
+  const validateInputs = () => {
+    if (firstName.trim() === '' || lastName.trim() === '') {
+      setError('Both first name and last name are required.');
+    } else {
+      setError('');
+    }
+  };
+
   return (
     <div>
       <div>
