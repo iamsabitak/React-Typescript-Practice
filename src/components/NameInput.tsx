@@ -1,6 +1,14 @@
-import React from "react";
-
-const NameInput: React.FC = () => {
+import React, { useState } from "react";
+interface NameInputProps {
+  initialFirstName?: string;
+  initialLastName?: string;
+}
+const NameInput: React.FC<NameInputProps> = ({
+    initialFirstName = '',
+    initialLastName = '',
+  }) => {
+    const [firstName, setFirstName] = useState<string>(initialFirstName);
+  const [lastName, setLastName] = useState<string>(initialLastName);
   return (
     <div>
       <div>
