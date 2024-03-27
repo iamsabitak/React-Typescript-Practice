@@ -45,7 +45,8 @@ const Gallery: React.FC = () => {
           style={{
             display: index === selectedImageIndex ? "block" : "none",
             margin: "0 auto",
-            maxWidth: "100%",
+            width: "600px",
+            height: "400px",
           }}
         />
       ))}
