@@ -34,6 +34,7 @@ const Gallery: React.FC = () => {
           transform: "translateY(-50%)",
           zIndex: 1,
         }}
+        disabled={selectedImageIndex === 0}
       >
         Prev
       </button>
@@ -59,6 +60,7 @@ const Gallery: React.FC = () => {
           transform: "translateY(-50%)",
           zIndex: 1,
         }}
+        disabled={selectedImageIndex === imageUrls.length - 1}
       >
         Next
       </button>
