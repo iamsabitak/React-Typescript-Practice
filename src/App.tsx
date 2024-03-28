@@ -1,12 +1,14 @@
 import React from "react";
-import NameInput from "./components/NameInput";
-import Gallery from "./components/Gallery";
+import Stepper from "./components/Stepper";
+// import NameInput from "./components/NameInput";
+// import Gallery from "./components/Gallery";
 
 const App: React.FC = () => {
   return (
     <div>
-      <NameInput initialFirstName="John" initialLastName="Doe" />
-      <Gallery />
+      {/* <NameInput initialFirstName="John" initialLastName="Doe" />
+      <Gallery /> */}
+      <Stepper />
     </div>
   );
 };
