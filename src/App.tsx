@@ -1,15 +1,17 @@
 import React from "react";
-import Stepper from "./components/Stepper";
+// import Stepper from "./components/Stepper";
+import { MantineProvider } from "@mantine/core";
 // import NameInput from "./components/NameInput";
 // import Gallery from "./components/Gallery";
+import Stepperrr from "./components/Stepper";
 
 const App: React.FC = () => {
   return (
-    <div>
+    <MantineProvider>
       {/* <NameInput initialFirstName="John" initialLastName="Doe" />
       <Gallery /> */}
-      <Stepper />
-    </div>
+      <Stepperrr />
+    </MantineProvider>
   );
 };
 
