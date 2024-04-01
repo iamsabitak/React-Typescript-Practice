@@ -1,6 +1,5 @@
 import React from "react";
 import "@mantine/core/styles.css";
-// import Stepper from "./components/Stepper";
 import { MantineProvider } from "@mantine/core";
 // import NameInput from "./components/NameInput";
 // import Gallery from "./components/Gallery";
