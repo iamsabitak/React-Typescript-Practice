@@ -8,10 +8,10 @@ import PostApi from "./components/PostApi";
 
 const App: React.FC = () => {
   return (
-    <MantineProvider>
+    <MantineProvider withCssVariables withGlobalClasses>
       {/* <NameInput initialFirstName="John" initialLastName="Doe" />
       <Gallery /> */}
-      <PostApi/>
+      <PostApi />
       {/* <Stepperrr /> */}
     </MantineProvider>
   );
