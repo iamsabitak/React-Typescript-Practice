@@ -3,7 +3,7 @@ import React from "react";
 import { MantineProvider } from "@mantine/core";
 // import NameInput from "./components/NameInput";
 // import Gallery from "./components/Gallery";
-import Stepperrr from "./components/Stepper";
+// import Stepperrr from "./components/Stepper";
 import PostApi from "./components/PostApi";
 
 const App: React.FC = () => {
@@ -12,7 +12,7 @@ const App: React.FC = () => {
       {/* <NameInput initialFirstName="John" initialLastName="Doe" />
       <Gallery /> */}
       <PostApi/>
-      <Stepperrr />
+      {/* <Stepperrr /> */}
     </MantineProvider>
   );
 };
