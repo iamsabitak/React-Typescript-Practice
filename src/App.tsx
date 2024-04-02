@@ -6,6 +6,7 @@ import { MantineProvider } from "@mantine/core";
 // import Stepperrr from "./components/Stepper";
 import PostApi from "./components/PostApi";
 import Promises from "./components/Promises";
+import Promisee from "./components/promisee";
 
 const App: React.FC = () => {
   return (
@@ -14,7 +15,8 @@ const App: React.FC = () => {
       <Gallery /> */}
       <PostApi />
       {/* <Stepperrr /> */}
-      <Promises/>
+      <Promises />
+      <Promisee />
     </MantineProvider>
   );
 };
