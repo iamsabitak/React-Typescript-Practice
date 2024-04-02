@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 type Post = {
     userId: number;
     id: number;
@@ -5,6 +7,9 @@ type Post = {
     body: string;
   };
 const Promises: React.FC = () => {
+    const [posts, setPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
   const fetchData = () => {
     console.log(true);
     fetch("https://jsonplaceholder.typicode.com/posts")
