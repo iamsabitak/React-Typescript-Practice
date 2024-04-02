@@ -1,3 +1,4 @@
+import { Box, Button, List, Text, Title } from "@mantine/core";
 import React, { useState } from "react";
 
 type Post = {
@@ -32,37 +33,31 @@ const Promises: React.FC = () => {
   };
 
   return (
-    <div style={{ textAlign: "center", margin: "20px" }}>
-      <h1 style={{ fontSize: "24px", marginBottom: "10px" }}>Posts</h1>
-      <button
-        style={{
-          padding: "10px 20px",
-          fontSize: "16px",
-          backgroundColor: "#007bff",
-          color: "#fff",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
-        }}
-        onClick={fetchData}
-        disabled={loading}
-      >
+    <Box m={"10px"} style={{ textAlign: "center" }}>
+      <Title mt={"20px"} fs={"24px"}>
+        Posts
+      </Title>
+      <Button mt={"20px"} onClick={fetchData} disabled={loading}>
         {loading ? "Loading..." : "Fetch Data"}
-      </button>
+      </Button>
       {error && (
-        <p style={{ color: "red", marginTop: "10px" }}>Error: {error}</p>
+        <Text mt={"40px"} c="red">
+          Error: {error}
+        </Text>
       )}
-      <ul style={{ listStyleType: "none", padding: 0 }}>
+      <Box p={0} mt={"20px"}>
         {posts.map((post) => (
-          <li key={post.id} style={{ marginBottom: "20px" }}>
-            <h2 style={{ fontSize: "20px", marginBottom: "5px" }}>
+          <List key={post.id} mb={"20px"}>
+            <Text fw={700} size="20px">
               {post.title}
-            </h2>
-            <p style={{ fontSize: "16px" }}>{post.body}</p>
-          </li>
+            </Text>
+            <Text size="16px" mt={"30px"}>
+              {post.body}
+            </Text>
+          </List>
         ))}
-      </ul>
-    </div>
+      </Box>
+    </Box>
   );
 };
 
