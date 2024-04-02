@@ -1,5 +1,9 @@
-import React from "react";
-
+type Post = {
+    userId: number;
+    id: number;
+    title: string;
+    body: string;
+  };
 const Promises: React.FC = () => {
   const fetchData = () => {
     console.log(true);
