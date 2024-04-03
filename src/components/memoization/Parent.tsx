@@ -13,7 +13,9 @@ const Parent: React.FC = () => {
     setCount(count - 1);
     console.log("object2");
   };
-
+  const addName = () => {
+    console.log("sabbu");
+  };
   return (
     <div>
       Parent
@@ -25,6 +27,7 @@ const Parent: React.FC = () => {
         </div>
         <p>Count: {count}</p>
       </div>
+      <button onClick={addName}>name</button>
       <Child />
     </div>
   );
