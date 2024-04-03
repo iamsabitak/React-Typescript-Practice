@@ -7,7 +7,7 @@ import { MantineProvider } from "@mantine/core";
 import PostApi from "./components/PostApi";
 import Promises from "./components/Promises";
 import Promisee from "./components/promisee";
-import Parent from "./components/memoization/parent";
+import Parent from "./components/memoization/Parent";
 
 const App: React.FC = () => {
   return (
