@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 const Child: React.FC = () => {
   const Greet = () => {
@@ -8,4 +8,4 @@ const Child: React.FC = () => {
   return <div>Child</div>;
 };
 
-export default Child;
+export default memo(Child); //stop the unnecessary re render when the parent component is updated
