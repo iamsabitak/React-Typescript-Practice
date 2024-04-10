@@ -8,6 +8,7 @@ import PostApi from "./components/PostApi";
 import Promises from "./components/Promises";
 import Promisee from "./components/promisee";
 import Parent from "./components/memoization/Parent";
+import AddTodo from "./components/AddTodo";
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
       <Promises />
       <Promisee />
       <Parent />
+      <AddTodo/>
     </MantineProvider>
   );
 };
