@@ -13,7 +13,25 @@ const AddTodo: React.FC = () => {
       prevTodos.filter((_, itemIndex) => itemIndex !== index)
     );
   };
-  return <div>AddTodo</div>;
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="enter the name"
+        value={AddTodo}
+        onChange={(e) => setAddTodo(e.target.value)}
+      />
+      <button onClick={onAdd}>Add</button>
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>
+            {todo}
+            <button onClick={() => deleteTodo(index)}>Delete</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default AddTodo;
